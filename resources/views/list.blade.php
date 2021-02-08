@@ -1,4 +1,4 @@
-<h1>Students Registration</h1>
+<h1>Students Registration List</h1>
 <table border='1'>
 <tr> 
 <td>id</td>

@@ -1,4 +1,4 @@
-<h1>Students Registration List</h1>
+<h1>Students Registration</h1>
 <table border='1'>
 <tr> 
 <td>id</td>
@@ -9,6 +9,7 @@
 <td>class</td>
 <td>gender</td>
 <td>subject</td>
+<td>operation</td>
 </tr>
 @foreach($StudentDetails as $StudentDetail)
 <tr>
@@ -20,7 +21,7 @@
 <td>{{$StudentDetail['class']}}</td>
 <td>{{$StudentDetail['gender']}}</td>
 <td>{{$StudentDetail['subject']}}</td>
-
+<td><a href={{"delete/".$StudentDetail['id']}}>Delete</a>
 </td>
 </tr>
 @endforeach

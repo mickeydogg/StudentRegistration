@@ -19,4 +19,3 @@ Route::get('/', function () {
 Route::get('list',[Students::class,'index']);
 Route::get('add',[Students::class,'create']);
 Route::post('list',[Students::class,'store']);
-Route::post('saved',[studentreg::class,'addData']);

@@ -18,6 +18,15 @@ class Students extends Controller
     }
     function store(Request $req)
     {
+        $req->validate([
+            'name' => 'required|min:7',
+            'email' => 'required|min:7',
+            'mobile' => 'required|min:10',
+            'status' => 'required',
+            'class' => 'required',
+            'gender' => 'required',
+            'subject' => 'required'
+        ]);
         $StudentDetail = new StudentDetail;
         $StudentDetail->name = $req->name;
         $StudentDetail->email = $req->email;

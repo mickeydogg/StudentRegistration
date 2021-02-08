@@ -4,7 +4,11 @@
 </head>
 <body>
 <h1>Student Registration</h1>
-
+@if($errors->any())
+@foreach($errors->all() as $err)
+<li>{{$err}}</li>
+@endforeach
+@endif
 <form action="list" method="POST" >
   @csrf 
   <div class="form-group ">

@@ -18,15 +18,18 @@ class Students extends Controller
     }
     function store(Request $req)
     {
+
         $req->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'mobile' => 'required',
+            'name' => 'required|min:7',
+            'email' => 'required|min:7',
+            'mobile' => 'required|min:10',
             'status' => 'required',
             'class' => 'required',
             'gender' => 'required',
             'subject' => 'required'
         ]);
+
+
         $StudentDetail = new StudentDetail;
         $StudentDetail->name = $req->name;
         $StudentDetail->email = $req->email;
@@ -39,4 +42,14 @@ class Students extends Controller
         $data = StudentDetail::all();
         return view('list', ['StudentDetails' => $data]);
     }
+        function delete($id)
+        {
+
+        $data = StudentDetail::find($id);
+        $data->delete();
+        return redirect('list');
+    
+        }
+
 }
+

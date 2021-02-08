@@ -19,9 +19,9 @@ class Students extends Controller
     function store(Request $req)
     {
         $req->validate([
-            'name' => 'required|min:7',
-            'email' => 'required|min:7',
-            'mobile' => 'required|min:10',
+            'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
             'status' => 'required',
             'class' => 'required',
             'gender' => 'required',

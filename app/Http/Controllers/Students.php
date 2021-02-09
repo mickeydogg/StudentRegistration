@@ -51,5 +51,25 @@ class Students extends Controller
     
         }
 
-}
+        function edit($id)
+        {
+            $data=StudentDetail::find($id);
+            return view('update',['data'=>$data]);
+        }
+
+        function update(Request $req)
+        {
+           $data=StudentDetail::find($req->id);
+           $data->name = $req->name;
+           $data->email = $req->email;
+           $data->mobile = $req->mobile;
+           $data->status = $req->status;
+           $data->class = $req->class;
+           $data->gender = $req->gender;
+           $data->subject = $req->subject;
+           $data->save();
+           return redirect('list');
+        }
+          
+    }
 

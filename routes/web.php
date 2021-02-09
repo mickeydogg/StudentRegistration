@@ -20,3 +20,5 @@ Route::get('list',[Students::class,'index']);
 Route::get('add',[Students::class,'create']);
 Route::post('list',[Students::class,'store']);
 Route::get('delete/{id}',[Students::class,'delete']);
+Route::get('edit/{id}',[Students::class,'edit']);
+Route::post('edit',[Students::class,'update']);

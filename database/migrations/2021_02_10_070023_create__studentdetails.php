@@ -13,8 +13,15 @@ class CreateStudentdetails extends Migration
      */
     public function up()
     {
-        Schema::create('_studentdetails', function (Blueprint $table) {
-            $table->id();
+        Schema::create('studentdetails', function (Blueprint $table) {
+              $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('mobile');
+            $table->string('status');
+            $table->string('class');
+            $table->string('gender');
+            $table->string('subject');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateStudentdetails extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_studentdetails');
+        Schema::dropIfExists('studentdetails');
     }
 }
